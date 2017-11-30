@@ -20,10 +20,17 @@ class Server extends Process
     {
         $this->port = $port;
         $this->host = $host;
+
+        $serverPath = 'public/';
+        if(version_compare(PHP_VERSION, '7.1.11') >= 0) {
+            $serverPath = '';
+        }
+
         parent::__construct(
             sprintf(
-                'exec php -dalways_populate_raw_post_data=-1 -derror_log= -S %s -t public/ index.php',
-                $this->getConnectionString()
+                'exec php -dalways_populate_raw_post_data=-1 -derror_log= -S %s -t public/ %sindex.php',
+                $this->getConnectionString(),
+                $serverPath
             ),
             __DIR__ . '/../'
         );
