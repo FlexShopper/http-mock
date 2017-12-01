@@ -14,7 +14,7 @@
     ],
      "require": {
         "php": "~7",
-        "silex/silex": "~2.2.0",
+        "silex/silex": "~2.1.0",
         "guzzle/guzzle": "*",
         "symfony/process": "~3",
         "jeremeamia/superclosure": "~2",
