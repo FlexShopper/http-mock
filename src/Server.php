@@ -22,7 +22,7 @@ class Server extends Process
         $this->host = $host;
 
         $serverPath = 'public/';
-        if(version_compare(PHP_VERSION, '7.1.11') >= 0) {
+        if(version_compare(PHP_VERSION, '7.0.26') >= 0) {
             $serverPath = '';
         }
 
